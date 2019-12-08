@@ -41,8 +41,8 @@ class Day1Test {
     void calculateTotalModulesFuelRequired_GivenTwoModulesWithMassOfFour_Should_Return_4(){
         // Arrange
         var modules = new ArrayList<Module>();
-        modules.add(new Module("a", 12));
-        modules.add(new Module("b", 12));
+        modules.add(new Module(12));
+        modules.add(new Module(12));
 
         var sut = new FuelCounterUpper(new FuelCalculator());
 
@@ -82,10 +82,10 @@ class Day1Test {
     }
 
     @Test
-    void calculateRequiredFuelGivenMassOf_1969_should_return_654() {
+    void calculateRequiredFuelGivenMassOf_1969_should_return_966() {
         // Arrange
         var module = new FuelCalculator();
-        var expectedRequiredFuel = 654;
+        var expectedRequiredFuel = 966;
 
         // Act
         var actualRequiredFuel = module.calculateRequiredFuelGivenMassOf(1969);
@@ -95,10 +95,10 @@ class Day1Test {
     }
 
     @Test
-    void calculateRequiredFuelGivenMassOf_100756_should_return_33583() {
+    void calculateRequiredFuelGivenMassOf_100756_should_return_50346() {
         // Arrange
         var module = new FuelCalculator();
-        var expectedRequiredFuel = 33583;
+        var expectedRequiredFuel = 50346;
 
         // Act
         var actualRequiredFuel = module.calculateRequiredFuelGivenMassOf(100756);

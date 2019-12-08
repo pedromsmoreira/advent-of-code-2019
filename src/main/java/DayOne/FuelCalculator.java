@@ -1,15 +1,22 @@
 package DayOne;
 
-public class FuelCalculator {
-    int calculateRequiredFuelGivenMassOf(int mass){
-        if (mass <= 0){
-            return 0;
-        }
+class FuelCalculator {
+    final int DIVIDEND = 3;
+    final int AMOUNT_TO_SUBTRACT = 2;
 
-        int DIVIDEND = 3;
+    int calculateRequiredFuelGivenMassOf(int mass){
+        return calculateFuelRequiredForModuleOf(mass, 0);
+    }
+
+    private int calculateFuelRequiredForModuleOf(int mass, int initialCounter) {
         var quotient = mass / DIVIDEND;
 
-        int AMOUNT_TO_SUBTRACT = 2;
-        return quotient - AMOUNT_TO_SUBTRACT;
+        if (quotient <= 1) {
+            return initialCounter;
+        }
+
+        var fuel = quotient - AMOUNT_TO_SUBTRACT;
+
+        return calculateFuelRequiredForModuleOf(fuel, initialCounter + fuel);
     }
 }
