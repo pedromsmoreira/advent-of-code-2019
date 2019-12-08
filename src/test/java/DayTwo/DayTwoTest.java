@@ -97,7 +97,6 @@ class DayTwoTest {
         assertArrayEquals(expected, state);
     }
 
-
     private static Stream<Arguments> provideProgramInputsAndExpectedValue(){
         return Stream.of(
                 Arguments.of(new int[]{1, 0, 0, 0, 99}, new int[]{2,0,0,0,99}),

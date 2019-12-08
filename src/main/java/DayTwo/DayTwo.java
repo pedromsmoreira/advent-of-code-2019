@@ -21,9 +21,15 @@ public class DayTwo {
                     .toArray();
 
             // for each line compute state
-            var result = stateRestorer.restore(parsedResult);
+            var copyParsedResult = parsedResult.clone();
+            copyParsedResult[1] = 12;
+            copyParsedResult[2] = 2;
 
-            System.out.println(String.format("Result for input: %s", result[0]));
+            var puzzle1Result = stateRestorer.restore(copyParsedResult);
+            System.out.println(String.format("Day 2 P1 Result: %s", puzzle1Result[0]));
+
+            var puzzle2Result = stateRestorer.restoreWithFinalResult(parsedResult, 19690720);
+            System.out.println(String.format("Day 2 P2 Result: %s", puzzle2Result));
         }
     }
 }
