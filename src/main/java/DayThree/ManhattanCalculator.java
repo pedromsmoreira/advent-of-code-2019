@@ -36,17 +36,13 @@ class ManhattanCalculator{
         var minimumCombinedSteps = Integer.MAX_VALUE;
         for (var intersection : intersections) {
 
-            var minimumStepsWire1 = 0;
             // add one extra step to take into account position (0,0)
             var stepsWire1 = wire1Coordinates.indexOf(intersection) + 1;
-            minimumStepsWire1 += stepsWire1;
 
-            var minimumStepsWire2 = 0;
             // add one extra step to take into account position (0,0)
             var stepsWire2 = wire2Coordinates.indexOf(intersection) + 1;
-            minimumStepsWire2 += stepsWire2;
 
-            var combinedSteps = minimumStepsWire1 + minimumStepsWire2;
+            var combinedSteps = stepsWire1 + stepsWire2;
 
             if (combinedSteps < minimumCombinedSteps){
                 minimumCombinedSteps = combinedSteps;
